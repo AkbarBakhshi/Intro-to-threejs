@@ -13,6 +13,7 @@ export default class Home {
                 .from('.home__welcome', { opacity: 0 })
                 .from('.home__youtube__channel__link', { y: '200%' })
                 .from('.home__go__to__about__link', { x: '200%'})
+                .from('.home__go__to__threejs__link', { x: '-200%'})
         })
     }
 
