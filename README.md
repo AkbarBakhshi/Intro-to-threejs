@@ -1,6 +1,8 @@
 # Quick Start Guide
 
-This repo includes the starter code for the introduction to ThreeJS youtube video. You can switch to the **final** branch to get the finished code and also a link to the youthube video.
+This repo includes the finished code for the introduction to ThreeJS youtube video (Part 1). Check out other branches to see more related codes and videos. Below is the link to the video for this branch:
+
+https://youtu.be/x097KglSvWc
 
 Download or clone the project on your local drive. Open Terminal (Command prompt) and navigate to the project folder. Then run ```npm install```. You should see a new folder called **node_modules** in the project folder.
 
