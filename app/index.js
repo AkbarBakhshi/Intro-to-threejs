@@ -3,6 +3,8 @@ import Detection from 'classes/detection'
 import Transition from 'components/Transition'
 import Preloader from 'components/Preloader'
 
+import Canvas from 'canvas'
+
 import Home from 'pages/Home'
 import About from 'pages/About'
 import Threejs from 'pages/Threejs'
@@ -20,9 +22,12 @@ class App {
         this.createPages()
         this.createCursor()
         this.createTransition()
+        this.create3jsCanvas()
 
         this.addLinkListeners()
         window.addEventListener('popstate', this.onPopState.bind(this))
+
+        this.update()
 
     }
 
@@ -39,6 +44,7 @@ class App {
                 duration: 1
             })
             this.page.animateIn()
+            this.canvas.create(this.template)
         })
     }
 
@@ -88,6 +94,12 @@ class App {
         this.transition = new Transition()
     }
 
+    create3jsCanvas() {
+        this.canvas = new Canvas({
+            template: this.template
+        })
+    }
+
     async onLocalLinkClick({ url, push = true }) {
         const cursor = document.querySelector('.cursor')
         if (!Detection.isDesktop()) {
@@ -118,6 +130,8 @@ class App {
 
             this.content.setAttribute('data-template', this.template)
             this.content.innerHTML = divContent.innerHTML
+
+            this.canvas.create(this.template)
 
             this.page = this.pages[this.template]
             this.page.create()
@@ -163,6 +177,15 @@ class App {
             url: window.location.pathname,
             push: false
         })
+    }
+
+    update() {
+        // console.log('main update')
+        if (this.canvas && this.canvas.update) {
+            this.canvas.update()
+        }
+        requestAnimationFrame(this.update.bind(this))
+        
     }
 
 }
