@@ -1,8 +1,8 @@
 # Quick Start Guide
 
-This repo includes the finished code for the introduction to ThreeJS youtube video (Part 1). Check out other branches to see more related codes and videos. Below is the link to the video for this branch:
+This repo includes the finished code for the introduction to ThreeJS youtube video (Part 2). Yo can use this code as a production-ready boilerplate for any projects that involves ThreeJS. Check out other branches to see more related codes and videos. Below is the link to the video for this branch:
 
-https://youtu.be/x097KglSvWc
+https://youtu.be/cKDv87ubWFk
 
 Note that the code in this branch is not final and you may encounter some errors while navigating through the website pages.
 

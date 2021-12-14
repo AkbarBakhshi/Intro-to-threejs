@@ -1,9 +1,9 @@
 import ThreeJS from './Threejs'
 
-
 export default class Canvas {
     constructor({template}) {
         this.template = template
+        this.onResize()
     }
 
     createThreejs() {
@@ -32,6 +32,12 @@ export default class Canvas {
         // console.log('canvas update')
         if (this.threejs) {
             this.threejs.update()
+        }
+    }
+
+    onResize() {
+        if (this.threejs) {
+            this.threejs.onResize()
         }
     }
 }

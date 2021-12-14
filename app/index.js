@@ -26,6 +26,9 @@ class App {
 
         this.addLinkListeners()
         window.addEventListener('popstate', this.onPopState.bind(this))
+        window.addEventListener('resize', this.onResize.bind(this))
+
+        this.onResize()
 
         this.update()
 
@@ -43,6 +46,8 @@ class App {
                 autoAlpha: 0,
                 duration: 1
             })
+
+            this.onResize()
             this.page.animateIn()
             this.canvas.create(this.template)
         })
@@ -135,6 +140,9 @@ class App {
 
             this.page = this.pages[this.template]
             this.page.create()
+
+            this.onResize()
+
             await this.page.animateIn()
 
             this.addLinkListeners()
@@ -186,6 +194,12 @@ class App {
         }
         requestAnimationFrame(this.update.bind(this))
         
+    }
+
+    onResize() {
+        if (this.canvas && this.canvas.onResize) {
+            this.canvas.onResize()
+        }
     }
 
 }
